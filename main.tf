@@ -48,7 +48,7 @@ resource "aws_vpn_connection" "transit_ha_gw" {
   tunnel2_inside_cidr   = var.tunnel_cidrs[3]
   tunnel1_preshared_key = random_password.psk[0].result
   tunnel2_preshared_key = random_password.psk[1].result
-  tags                  = { Name = "${var.aws_vpn_connection_name}-1" }
+  tags                  = { Name = "${var.aws_vpn_connection_name}-2" }
 }
 
 resource "aviatrix_transit_external_device_conn" "tunnel1_to_tgw" {
