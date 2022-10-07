@@ -43,6 +43,12 @@ variable "approved_cidrs" {
   default     = null
 }
 
+variable "aws_vpn_connection_name" {
+  description = "Name of AWS S2S VPN tunnel."
+  type        = string
+  default     = null
+}
+
 locals {
   is_ha           = var.gw_object.ha_gw_size != null
   connection_name = length(var.connection_name) > 0 ? var.connection_name : "${var.gw_object.gw_name}_to_tgw"
